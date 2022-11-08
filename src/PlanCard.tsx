@@ -30,13 +30,13 @@ export default function PlanCard({
           <li className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="mr-3 h-7 w-7"
+              className="mr-3 h-3 w-3"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
               <path
                 fillRule="evenodd"
-                d="M56.1 3.294l-6.874 15.832c2.05.889 3.957 2.073 5.663 3.515L66.037 9.468a40.12 40.12 0 00-9.936-6.174z"
+                d="M8.65792 19.316L7.34192 18L15.6849 9.658L7.34192 1.316L8.65792 0L18.3149 9.658L8.65792 19.316Z"
                 clipRule="evenodd"
               ></path>
             </svg>
