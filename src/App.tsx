@@ -36,7 +36,7 @@ const data = [
 
 function App() {
   return (
-    <div className="flex flex-col items-center bg-black p-4">
+    <div className="flex flex-col items-center bg-black p-4 min-h-screen">
       <div className="mb-2 mt-12 text-center">
         <h1 className="mb-4 text-7xl font-black text-white">Pricing</h1>
         <p className="text-lg text-white">
@@ -47,6 +47,7 @@ function App() {
       <div className="flex flex-col gap-8 p-10 xl:flex-row">
         {data.map((item, i) => (
           <PlanCard
+            key={i}
             color={item.colors}
             name={item.name}
             description={item.description}

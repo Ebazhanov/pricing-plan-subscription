@@ -1,3 +1,7 @@
+import Confetti from "react-confetti";
+import useWindowSize from "react-use/lib/useWindowSize";
+import React, { useState } from "react";
+
 interface PlanCardProps {
   name: string;
   description: string;
@@ -15,6 +19,9 @@ export default function PlanCard({
   features,
   color,
 }: PlanCardProps) {
+  const [start, setStart] = useState(false);
+  const { width, height } = useWindowSize();
+
   return (
     <div
       style={{ backgroundColor: color }}
@@ -26,8 +33,8 @@ export default function PlanCard({
       </div>
       <p className="mb-5">{description}</p>
       <ul className="mb-10 flex flex-col gap-y">
-        {features.map((feature) => (
-          <li className="flex items-center">
+        {features.map((feature, i) => (
+          <li key={i} className="flex items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="mr-3 h-3 w-3"
@@ -44,9 +51,15 @@ export default function PlanCard({
           </li>
         ))}
       </ul>
-      <button className="mt-auto rounded-xl bg-black py-3 px-6 text-lg font-medium text-white">
+      <button
+        onClick={() => setStart(true)}
+        className="mt-auto rounded-xl bg-black py-3 px-6 text-lg font-medium text-white"
+      >
         {btnText}
       </button>
+      {start && (
+        <Confetti width={width} height={height} numberOfPieces={2000} />
+      )}
     </div>
   );
 }
