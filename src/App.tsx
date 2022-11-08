@@ -2,6 +2,27 @@ import React from "react";
 import "./index.css";
 import PlanCard from "./PlanCard";
 
+const data = [
+  {
+    colors: "#78E3FC",
+    name: "Basic",
+    description: "Get started with the basic plan",
+    features: ["1 User"],
+  },
+  {
+    colors: "#FCD638",
+    name: "Pro",
+    description: "Get more advanced",
+    features: ["1 User"],
+  },
+  {
+    colors: "#FFB5BA",
+    name: "Business",
+    description: "Get more advanced",
+    features: ["1 User"],
+  },
+];
+
 function App() {
   return (
     <div className="flex flex-col items-center bg-black p-4">
@@ -13,12 +34,14 @@ function App() {
         </p>
       </div>
       <div className="flex flex-col gap-8 p-10 xl:flex-row">
-        <PlanCard
-          color="#78E3FC"
-          name="Basic"
-          description="Get started with the basic plan"
-          features={["1 User"]}
-        />
+        {data.map((item, i) => (
+          <PlanCard
+            color={item.colors}
+            name={item.name}
+            description={item.description}
+            features={item.features}
+          />
+        ))}
       </div>
     </div>
   );
