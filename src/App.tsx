@@ -7,19 +7,30 @@ const data = [
     colors: "#78E3FC",
     name: "Basic",
     description: "Get started with the basic plan",
-    features: ["1 User"],
+    features: ["1 User", "2 Projects", "5 GB Storage"],
+    btnText: "Start Free Plan",
   },
   {
     colors: "#FCD638",
     name: "Pro",
     description: "Get more advanced",
-    features: ["1 User"],
+    features: ["3 User", "5 Projects", "10 GB Storage", "Custom Domain"],
+    price: "7",
+    btnText: "Start Pro Trial",
   },
   {
     colors: "#FFB5BA",
     name: "Business",
-    description: "Get more advanced",
-    features: ["1 User"],
+    description: "For big business",
+    features: [
+      "Unlimited Users",
+      "Unlimited Projects",
+      "100 GB Storage",
+      "Custom Domain",
+      "Analytic Tools",
+    ],
+    price: "24",
+    btnText: "Start big business",
   },
 ];
 
@@ -40,6 +51,8 @@ function App() {
             name={item.name}
             description={item.description}
             features={item.features}
+            price={item.price}
+            btnText={item.btnText}
           />
         ))}
       </div>

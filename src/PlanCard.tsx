@@ -44,6 +44,9 @@ export default function PlanCard({
           </li>
         ))}
       </ul>
+      <button className="mt-auto rounded-xl bg-black py-3 px-6 text-lg font-medium text-white">
+        {btnText}
+      </button>
     </div>
   );
 }
